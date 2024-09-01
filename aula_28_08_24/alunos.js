@@ -115,17 +115,15 @@ function verificaDadosEdit() {
   }
 }
 function editarAluno() {
-  for (let i = 0; i < alunos.length; i++) {
-    if (alunos[i].id === alunoSelecionado[0].id) {
-      alunos[i].nome = document.getElementById("nomeAlunoEdit").value;
-      alunos[i].email = document.getElementById("emailAlunoEdit").value;
-      alunos[i].telefone = document.getElementById("telefoneAlunoEdit").value;
-      alunos[i].CPF = document.getElementById("cpfAlunoEdit").value;
-      alunos[i].dataNascimento =
-        document.getElementById("dataNascAlunoEdit").value;
+  alunos.forEach((aluno) => {
+    if (aluno.id === alunoSelecionado[0].id) {
+      aluno.nome = document.getElementById("nomeAlunoEdit").value;
+      aluno.email = document.getElementById("emailAlunoEdit").value;
+      aluno.telefone = document.getElementById("telefoneAlunoEdit").value;
+      aluno.CPF = document.getElementById("cpfAlunoEdit").value;
+      aluno.dataNascimento = document.getElementById("dataNascAlunoEdit").value;
       alert("Aluno editado");
-      break;
     }
-  }
+  });
   carregarTabela();
 }
